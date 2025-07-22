@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: pdf417-api
+    name: kssoft
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
