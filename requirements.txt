@@ -1,0 +1,3 @@
+flask
+pdf417gen
+pillow
