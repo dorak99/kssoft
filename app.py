@@ -1,5 +1,5 @@
 from flask import Flask, request, send_file
-from pdf417 import encode, render_image
+from pdf417gen import encode, render_image
 from PIL import Image
 import io
 
