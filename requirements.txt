@@ -1,4 +1,5 @@
 flask
+pdf417
 pdf417gen
 pillow
 gunicorn
