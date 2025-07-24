@@ -16,12 +16,6 @@ def generate_barcode():
     if not data:
         return "Missing 'dl_data' or 'data' parameter", 400
 
-    # ✅ Ensure data starts and ends with double quotes
-    if not data.startswith('"'):
-        data = '"' + data
-    if not data.endswith('"'):
-        data = data + '"'
-
     try:
         # Encode the data to PDF417
         codes = encode(data, columns=9, security_level=5)
