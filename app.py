@@ -5,14 +5,6 @@ import io
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return '''
-    <h2>PDF417 Transparent Barcode Generator (via API)</h2>
-    <p>Use GET: /barcode?data=YOUR_DATA_HERE</p>
-    <p>Use POST: Send form field "dl_data" to /barcode</p>
-    '''
-
 @app.route('/barcode', methods=['GET', 'POST'])
 def generate_barcode():
     # Accept data from both GET and POST
@@ -23,6 +15,12 @@ def generate_barcode():
 
     if not data:
         return "Missing 'dl_data' or 'data' parameter", 400
+
+    # ✅ Ensure data starts and ends with double quotes
+    if not data.startswith('"'):
+        data = '"' + data
+    if not data.endswith('"'):
+        data = data + '"'
 
     try:
         # Encode the data to PDF417
