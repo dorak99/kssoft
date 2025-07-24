@@ -22,14 +22,14 @@ def generate_barcode():
         img = render_image(codes, scale=5).convert("RGBA")
 
         # Convert white to transparent
-        datas = img.getdata()
-        newData = []
-        for item in datas:
-            if item[:3] == (255, 255, 255):
-                newData.append((255, 255, 255, 0))
-            else:
-                newData.append(item)
-        img.putdata(newData)
+        #datas = img.getdata()
+       # newData = []
+        #for item in datas:
+            #if item[:3] == (255, 255, 255):
+               # newData.append((255, 255, 255, 0))
+           # else:
+                #newData.append(item)
+        #img.putdata(newData)
 
         # Return the image as a PNG
         img_io = io.BytesIO()
